@@ -82,12 +82,60 @@
       - sprite: _starcup/Objects/Devices/encryption_keys.rsi
         state: prisoner_label
 
+- type: entity
+  name: prison encryption key box
+  parent: BoxEncryptionKeyPassenger
+  id: BoxEncryptionKeyPrison
+  components:
+  - type: StorageFill
+    contents:
+    - id: EncryptionKeyPrison
+      amount: 4
+
 - type: radioChannel
   id: Prison
   name: chat-radio-prison
   keycode: 'p'
   frequency: 1601
   color: "#FFA500"
+
+- type: entity
+  parent: TelecomServer
+  id: TelecomServerFilledPrison
+  suffix: Prison
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyCommon
+      - EncryptionKeyPrison
+
+- type: entity
+  id: IntercomPrison
+  parent: Intercom
+  suffix: Prison
+  components:
+  - type: ContainerFill
+    containers:
+      board:
+      - IntercomElectronics
+      key_slots:
+      - EncryptionKeyCommon
+      - EncryptionKeyPrison
+
+- type: entity
+  id: IntercomSecurityPrison
+  parent: BaseIntercomSecure
+  suffix: Security, Prison
+  components:
+  - type: ContainerFill
+    containers:
+      board:
+      - IntercomElectronics
+      key_slots:
+      - EncryptionKeyCommon
+      - EncryptionKeyPrison
+      - EncryptionKeySecurity
 
 # Loadouts
 - type: loadout
