@@ -45,7 +45,7 @@
   - type: Sprite
     layers:
     - state: orange
-    - sprite: _starcup/Objects/Misc/id_cards.rsi
+    - sprite: _starcup/Objects/Misc/id_card_prisoner.rsi
       state: idprisoner
   - type: PresetIdCard
     job: Prisoner
