@@ -12,8 +12,8 @@
 - type: entity
   parent: CrateMedicalSecure
   id: CrateVendingMachineRestockMedicalFilled
-  name: NanoMed restock crate
-  description: Contains a restock box, compatible with the NanoMed and NanoMedPlus.
+  name: Interdyne PharmAssist restock crate # starcup: NanoMed to Interdyne PharmAssist
+  description: Contains a restock box, compatible with the Interdyne PharmAssist and PharmAssistPlus. # starcup: NanoMed to Interdyne PharmAssist
   components:
   - type: EntityTableContainerFill
     containers:
