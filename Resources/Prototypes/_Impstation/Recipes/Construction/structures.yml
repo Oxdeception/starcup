@@ -1,21 +1,21 @@
 - type: construction
-  id: PoweredFloorLightEmpty
-  graph: FloorLightFixture
+  id: SteelWoodWall
+  graph: Girder
   startNode: start
-  targetNode: floorLight
+  targetNode: steelWoodWall
   category: construction-category-structures
   objectType: Structure
   placementMode: SnapgridCenter
   canRotate: false
   canBuildInImpassable: false
   conditions:
-  - !type:TileNotBlocked
+    - !type:TileNotBlocked
 
 - type: construction
-  id: OrnateWoodWall
-  graph: Barricade
+  id: ReinforcedSteelWoodWall
+  graph: Girder
   startNode: start
-  targetNode: ornateWoodWall
+  targetNode: reinforcedSteelWoodWall
   category: construction-category-structures
   objectType: Structure
   placementMode: SnapgridCenter
