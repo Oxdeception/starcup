@@ -537,7 +537,9 @@
     - Scarves
     - Carpets
     - Bedsheets
-    - BeltsDeltaV # Delta-V
+# begin Delta-V
+    - BeltsDeltaV
+# end Delta-V
     - ClothingStarcup # starcup
   - type: EmagLatheRecipes
     emagStaticPacks:
