@@ -3713,3 +3713,11 @@
   id: 8471
   time: '2026-06-22T02:06:16.0000000+00:00'
   url: https://github.com/teamstarcup/starcup/pull/880
+- author: Psymbiote
+  changes:
+  - message: The random lists of doptera names have been expanded. Now you can finally
+      meet your cousin Atlas again!
+    type: Add
+  id: 8472
+  time: '2026-06-26T18:45:22.0000000+00:00'
+  url: https://github.com/teamstarcup/starcup/pull/905
