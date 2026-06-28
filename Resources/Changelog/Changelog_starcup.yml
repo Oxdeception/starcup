@@ -3766,3 +3766,11 @@
   id: 8478
   time: '2026-06-28T20:02:06.0000000+00:00'
   url: https://github.com/teamstarcup/starcup/pull/912
+- author: bruhmogus
+  changes:
+  - message: Added a flashless travel camera to the Trinkets section of loadouts.
+      Say cheese!
+    type: Add
+  id: 8479
+  time: '2026-06-28T20:49:36.0000000+00:00'
+  url: https://github.com/teamstarcup/starcup/pull/887
