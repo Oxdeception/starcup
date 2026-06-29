@@ -310,6 +310,9 @@
   - RedBandanaMask
   - SkullBandanaMask
   - BrownBandanaMask
+  - BlackFaceMask
+  - WhiteFaceMask
+  - RedFaceMask
   # end starcup
 
 - type: loadoutGroup
@@ -386,6 +389,7 @@
   - WinterCoatWhite
   - WinterCoatYellow
   - TrenchCoat
+  - BartenderVest
   - CorpoJacketCybersun
   - CorpoJacketHawkmoon
   - CorpoJacketInterdyne
@@ -508,6 +512,7 @@
   - ChefJacket
   - ChefWintercoat
   - ChefCuteApron # imp
+  - BartenderVest # starcup
   - CorpoJacketDonkChef # starcup
 
 #- type: loadoutGroup
@@ -671,7 +676,7 @@
   - OrangeGloves
   - PurpleGloves
   - WhiteGloves # starcup - to match maid outfit
-  - FingerlessGloves # starcup - to go with impractical tactical maid outfit (gloves are insuls)
+  - TacticoolMaidGloves # starcup - fake tac maid gloves that arent insuls
 
 - type: loadoutGroup
   id: JanitorOuterClothing
