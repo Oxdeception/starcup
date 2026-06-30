@@ -3818,3 +3818,11 @@
   id: 8482
   time: '2026-06-30T03:43:39.0000000+00:00'
   url: https://github.com/teamstarcup/starcup/pull/879
+- author: KoboldCatgirl
+  changes:
+  - message: Fixed initialization issues with Lavaland's fax machine, air alarms,
+      and containers.
+    type: Fix
+  id: 8483
+  time: '2026-06-30T04:04:06.0000000+00:00'
+  url: https://github.com/teamstarcup/starcup/pull/915
