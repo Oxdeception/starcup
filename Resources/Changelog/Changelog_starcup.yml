@@ -3804,3 +3804,17 @@
   id: 8481
   time: '2026-06-30T00:03:46.0000000+00:00'
   url: https://github.com/teamstarcup/starcup/pull/886
+- author: KoboldCatgirl
+  changes:
+  - message: Fixed various Banana Station object rotations.
+    type: Fix
+  - message: Added Lawyer and Paramedic slots to Banana.
+    type: Tweak
+  - message: Added various QOL bits and bobs to Banana, *slightly* expanding Science
+      in the process.
+    type: Tweak
+  - message: Banana's Botany now has a pet firebot. Not that we don't trust you, but...
+    type: Add
+  id: 8482
+  time: '2026-06-30T03:43:39.0000000+00:00'
+  url: https://github.com/teamstarcup/starcup/pull/879
