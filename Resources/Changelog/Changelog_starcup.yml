@@ -3784,3 +3784,23 @@
   id: 8480
   time: '2026-06-29T21:20:13.0000000+00:00'
   url: https://github.com/teamstarcup/starcup/pull/903
+- author: bruhmogus
+  changes:
+  - message: Added two new shirt bows, worn in the neck slot.
+    type: Add
+  - message: Added a masquerade mask, available in bulk via the TheaterDrobe.
+    type: Add
+  - message: Added the Pyrite Mask, similar in appearance to the haunted Golden Mask,
+      but completely safe.
+    type: Add
+  - message: Added face masks to the ClothesMate and passenger loadout in three different
+      colors - red, white, and black.
+    type: Add
+  - message: Janitors now have access to the tacticool maid gloves, a pair of the
+      tactical maid gloves that aren't insulated. Style!
+    type: Add
+  - message: Passengers and Chefs now can wear vests in their loadouts.
+    type: Tweak
+  id: 8481
+  time: '2026-06-30T00:03:46.0000000+00:00'
+  url: https://github.com/teamstarcup/starcup/pull/886
