@@ -3826,3 +3826,12 @@
   id: 8483
   time: '2026-06-30T04:04:06.0000000+00:00'
   url: https://github.com/teamstarcup/starcup/pull/915
+- author: Psymbiote
+  changes:
+  - message: Slimes can now sign up at SyndComm using their traditional, single-word
+      onomatopoeic names of old. (That is to say, they have new names in the random
+      generator.)
+    type: Add
+  id: 8484
+  time: '2026-07-02T01:21:42.0000000+00:00'
+  url: https://github.com/teamstarcup/starcup/pull/916
