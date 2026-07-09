@@ -3881,3 +3881,14 @@
   id: 8490
   time: '2026-07-08T21:24:45.0000000+00:00'
   url: https://github.com/teamstarcup/starcup/pull/932
+- author: bruhmogus
+  changes:
+  - message: The meat spike has been replaced with the butchering station, being a
+      much less graphic structure that instantly kills anything that you put onto
+      it.
+    type: Tweak
+  - message: Most large mobs now require the butchering station to be butchered.
+    type: Tweak
+  id: 8491
+  time: '2026-07-09T20:04:03.0000000+00:00'
+  url: https://github.com/teamstarcup/starcup/pull/888
