@@ -3892,3 +3892,11 @@
   id: 8491
   time: '2026-07-09T20:04:03.0000000+00:00'
   url: https://github.com/teamstarcup/starcup/pull/888
+- author: KoboldCatgirl
+  changes:
+  - message: Added a massive supply of new outfits to spawners, dressers, and the
+      Theaterdrobe, plus a few easter eggs.
+    type: Add
+  id: 8492
+  time: '2026-07-09T21:22:04.0000000+00:00'
+  url: https://github.com/teamstarcup/starcup/pull/933
