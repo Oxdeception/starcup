@@ -3900,3 +3900,10 @@
   id: 8492
   time: '2026-07-09T21:22:04.0000000+00:00'
   url: https://github.com/teamstarcup/starcup/pull/933
+- author: bruhmogus
+  changes:
+  - message: Added the Sleepy trait, allowing you to sleep on your own volition anywhere.
+    type: Add
+  id: 8493
+  time: '2026-07-11T15:12:16.0000000+00:00'
+  url: https://github.com/teamstarcup/starcup/pull/925
