@@ -3907,3 +3907,17 @@
   id: 8493
   time: '2026-07-11T15:12:16.0000000+00:00'
   url: https://github.com/teamstarcup/starcup/pull/925
+- author: IdiotWhoPlaysVIPRandGreene
+  changes:
+  - message: Added Six new goggles total - 3 that can be allocated to your loadout
+      before joining the round, 1 that can be found via activating the contraband
+      wire of the Medidrobe, 1 that is specifically for admin shenanigans/style, and
+      1 for bartenders to select in their loadouts!
+    type: Add
+  - message: Changed MKCs so that they have a proper speciesID now.
+    type: Tweak
+  - message: Fixed goggles for MKCs by adding a new sprite to prevent clipping!
+    type: Fix
+  id: 8494
+  time: '2026-07-12T23:03:00.0000000+00:00'
+  url: https://github.com/teamstarcup/starcup/pull/931
