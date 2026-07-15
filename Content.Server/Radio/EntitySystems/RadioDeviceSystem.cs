@@ -268,7 +268,7 @@ public sealed partial class RadioDeviceSystem : SharedRadioDeviceSystem
         if (TryComp<RadioMicrophoneComponent>(ent, out var mic))
         {
             mic.BroadcastChannel = channel.Value;
-            if(_protoMan.TryIndex<RadioChannelPrototype>(channel, out var channelProto)) // Frontier
+            if(ProtoMan.TryIndex<RadioChannelPrototype>(channel, out var channelProto)) // Frontier
                 mic.Frequency = _radio.GetFrequency(ent, channelProto); // Frontier
         }
         if (TryComp<RadioSpeakerComponent>(ent, out var speaker))
@@ -334,7 +334,7 @@ public sealed partial class RadioDeviceSystem : SharedRadioDeviceSystem
     {
         // Set initial frequency (must be done regardless of power/enabled)
         if (ent.CurrentChannel != null &&
-                _protoMan.TryIndex(ent.CurrentChannel, out var channel) &&
+                ProtoMan.TryIndex(ent.CurrentChannel, out var channel) &&
                 TryComp(uid, out RadioMicrophoneComponent? mic))
         {
             mic.Frequency = channel.Frequency;

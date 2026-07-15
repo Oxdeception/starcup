@@ -205,7 +205,7 @@ public abstract partial class SharedDefibrillatorSystem : EntitySystem
                 InGameICChatType.Speak, true);
         }
         // begin starcup: damage container check
-        else if (TryComp<DamageableComponent>(target, out var damageable) && damageable.DamageContainerID != ent.Comp.DamageContainer)
+        else if (TryComp<InjurableComponent>(target, out var damageable) && damageable.DamageContainer != ent.Comp.DamageContainer)
         {
             _chat.TrySendInGameICMessage(ent.Owner, Loc.GetString("defibrillator-wrong-damage-container"),
                 InGameICChatType.Speak, true);

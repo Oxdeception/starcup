@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
+using Content.Server.Chemistry.EntitySystems;
 using Content.Server.Fluids.EntitySystems;
 using Content.Server.Gravity;
 using Content.Shared._starcup.CCVars;
@@ -20,18 +21,18 @@ using Robust.Shared.Random;
 
 namespace Content.Server._starcup.Footprints;
 
-public sealed class FootprintSystem : EntitySystem
+public sealed partial class FootprintSystem : EntitySystem
 {
-    [Dependency] private readonly IConfigurationManager _configuration = default!;
-    [Dependency] private readonly GravitySystem _gravity = default!;
-    [Dependency] private readonly InventorySystem _inventory = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
-    [Dependency] private readonly PuddleSystem _puddle = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly SharedMapSystem _map = default!;
-    [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
-    [Dependency] private readonly StandingStateSystem _standing = default!;
-    [Dependency] private readonly TransformSystem _transform = default!;
+    [Dependency] private IConfigurationManager _configuration = default!;
+    [Dependency] private GravitySystem _gravity = default!;
+    [Dependency] private InventorySystem _inventory = default!;
+    [Dependency] private IPrototypeManager _prototype = default!;
+    [Dependency] private PuddleSystem _puddle = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private SharedMapSystem _map = default!;
+    [Dependency] private SolutionContainerSystem _solution = default!;
+    [Dependency] private StandingStateSystem _standing = default!;
+    [Dependency] private TransformSystem _transform = default!;
 
     private EntityQuery<FootprintModifierComponent> _footprintModiferQuery;
 
@@ -195,10 +196,10 @@ public sealed class FootprintSystem : EntitySystem
         if (!_solution.TryGetSolution(puddleUid, puddleSolutionName, out var puddleSolution, out var puddleSol))
             return false;
 
-        if (!_solution.EnsureSolutionEntity(ent.Owner, ent.Comp.Solution, out _, out var footprintOwnerSolution, footprintData.MaxStoredVolume))
-            return false;
+        if (!_solution.EnsureSolution(ent.Owner, ent.Comp.Solution, out var footprintOwnerSolution))
+            footprintOwnerSolution.Comp.Solution.MaxVolume = footprintData.MaxStoredVolume;
 
-        var footprintOwnerSol = footprintOwnerSolution.Value.Comp.Solution;
+        var footprintOwnerSol = footprintOwnerSolution.Comp.Solution;
 
         _solution.TryTransferSolution(puddleSolution.Value, source: footprintOwnerSol, GetScaledVolume(footprintOwnerSol, footprintData));
 
@@ -206,7 +207,7 @@ public sealed class FootprintSystem : EntitySystem
         if (puddleSol.Volume < _minimumPuddleSize)
             return false;
 
-        _solution.TryTransferSolution(footprintOwnerSolution.Value, source: puddleSol, FixedPoint2.Max(0, footprintData.MaxStoredVolume - footprintOwnerSol.Volume));
+        _solution.TryTransferSolution(footprintOwnerSolution, source: puddleSol, FixedPoint2.Max(0, footprintData.MaxStoredVolume - footprintOwnerSol.Volume));
         _solution.UpdateChemicals(puddleSolution.Value, false);
 
         return true;
@@ -231,17 +232,17 @@ public sealed class FootprintSystem : EntitySystem
         }
         var footprint = fp.Value;
 
-        if (!_solution.EnsureSolutionEntity(footprint.Owner, footprint.Comp.Solution, out _, out var footprintSolution, MaxFootprintVolumeOnTile))
-            return;
+        if (!_solution.EnsureSolution(footprint.Owner, footprint.Comp.Solution, out var footprintSolution))
+            footprintSolution.Comp.Solution.MaxVolume = MaxFootprintVolumeOnTile;
 
-        _solution.TryTransferSolution(footprintSolution.Value, source: ownerSolution, volume);
+        _solution.TryTransferSolution(footprintSolution, source: ownerSolution, volume);
 
         // Ensure no trace amounts are left after the last footprint is put down
         if (volume < footprintData.MinVolume)
             _solution.RemoveAllSolution(solution.Value);
 
         // Too many footprints, become a normal puddle
-        if (footprintSolution.Value.Comp.Solution.Volume >= MaxFootprintVolumeOnTile)
+        if (footprintSolution.Comp.Solution.Volume >= MaxFootprintVolumeOnTile)
         {
             ToPuddle(footprint, coordinates);
             return;
