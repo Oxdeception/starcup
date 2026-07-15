@@ -217,6 +217,7 @@
         - id: NewtonCradle
         - id: BoxEnvelope
         - id: BrbSign
+        - id: DeskBell
         # Start DeltaV - More folders & colored paper reams in the bureaucracy crate
         - id: BoxFolderBlack
           amount: 2
